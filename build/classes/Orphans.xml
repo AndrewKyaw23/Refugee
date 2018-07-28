@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Orphans">
+	<typeAlias alias="OrphansObject" type="com.java.plyd.service.Orphans" />
+
+	<resultMap id="OrphansResultMap" class="OrphansObject">
+	
+		<result property="Orphans_id" column="Orphans_id" />
+		<result property="Name" column="Name" />
+		<result property="Nrc" column="Nrc" />
+		<result property="BOD" column="BOD" />
+		<result property="Age" column="Age" />
+		<result property="FatherName" column="FatherName" />
+		<result property="Gender" column="Gender" />
+		<result property="CampName" column="CampName" />
+		<result property="ArrivalDate" column="ArrivalDate" />
+		<result property="OriginalVillage" column="OriginalVillage" />
+		<result property="RoomNo" column="RoomNo" />
+		<result property="DepartureDate" column="DepartureDate" />
+		<result property="Remark" column="Remark" />
+	</resultMap>
+	<insert id="insertOrphans" parameterClass="OrphansObject">
+		INSERT INTO orphans
+		(Name,Nrc,BOD,Age,FatherName,Gender,CampName,ArrivalDate,OriginalVillage,RoomNo,DepartureDate,Remark) VALUES
+		(#Name#,#Nrc#,#BOD#,#Age#,#FatherName#,#Gender#,#CampName#,#ArrivalDate#,#OriginalVillage#,#RoomNo#,#DepartureDate#,#Remark#);
+	</insert>
+	<select id="selectAllOrphans" resultMap="OrphansResultMap">
+		SELECT * FROM orphans;
+	</select>
+	<select id="selectOrphans" parameterClass="java.lang.Integer"
+		resultMap="OrphansResultMap">        
+		SELECT * FROM orphans WHERE Orphans_id=#value#;
+	</select>
+	
+	<update id="updateOrphans" parameterClass="OrphansObject">
+		UPDATE orphans
+		SET
+	    Name=#Name# ,
+		Nrc=#Nrc#,BOD=#BOD#,
+		Age=#Age#,FatherName=#FatherName#,
+		Gender=#Gender#,CampName=#CampName# ,
+		ArrivalDate=#ArrivalDate#,OriginalVillage=#OriginalVillage#,
+		RoomNo=#RoomNo#,DepartureDate=#DepartureDate#,
+		Remark=#Remark#
+		
+		WHERE
+		Orphans_id=#Orphans_id#;
+	</update>
+	
+	<delete id="deleteOrphans" parameterClass="java.lang.Integer">
+		DELETE FROM orphans
+		WHERE Orphans_id=#value#;
+	</delete>
+	
+	</sqlMap> 

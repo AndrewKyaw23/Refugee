@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Victim">
+	<typeAlias alias="VictimObject" type="com.java.plyd.service.Victim" />
+
+	<resultMap id="VictimResultMap" class="VictimObject">
+	
+		<result property="Victim_id" column="Victim_id" />
+		<result property="Header_id" column="Header_id" />
+		<result property="Name" column="Name" />
+		<result property="NRC" column="NRC" />
+		<result property="BOD" column="BOD" />
+		<result property="Age" column="Age" />
+		<result property="Father_Name" column="Father_Name" />
+		<result property="Address" column="Address" />
+		<result property="Arrival_Date" column="Arrival_Date" />
+		<result property="Arrival_Time" column="Arrival_Time" />
+		<result property="Grade" column="Grade" />
+		<result property="Camp_Name" column="Camp_Name" />
+		<result property="Gender" column="Gender" />
+		<result property="Religion" column="Religion" />
+		<result property="Remark" column="Remark" />
+	</resultMap>
+
+	<insert id="insertVictim" parameterClass="VictimObject">
+		INSERT INTO victim
+		(Header_id,Name,NRC,BOD,Age,Father_Name,Address,Arrival_Date,Arrival_Time,Grade,Camp_Name,Gender,Religion,Remark) VALUES
+		(#Header_id#,#Name#,#NRC#,#BOD#,#Age#,#Father_Name#,#Address#,#Arrival_Date#,#Arrival_Time#,#Grade#,#Camp_Name#,#Gender#,#Religion#,#Remark#);
+	</insert>
+	
+	<select id="selectAllVictim" 	resultMap="VictimResultMap">
+		SELECT * FROM victim;
+	</select>
+	
+    <select id="selectVictim" parameterClass="java.lang.Integer"
+		resultMap="VictimResultMap">
+		SELECT * FROM victim WHERE Victim_id=#value#;
+	</select>
+	
+     <update id="updateVictim" parameterClass="VictimObject">
+		UPDATE victim
+		SET
+		Victim_id=#Victim_id,#,Header_id=#Header_id#,
+		Name=#Name# ,NRC=#NRC#,
+		BOD=#BOD#,Age=#Age#,
+		Father_Name=#Father_Name#,Address=#Address#,
+		Arrival_Date=#Arrival_Date#,Arrival_Time=#Arrival_Time#,
+		Grade=#Grade# ,Camp_Name=#Camp_Name#,
+		Gender=#Gender#,Religion=#Religion#,
+		Remark=#Remark#
+		WHERE
+		Victim_id=#Victim_id#;
+	</update>
+	
+	<delete id="deleteVictim" parameterClass="java.lang.Integer">
+		DELETE FROM victim
+		WHERE Victim_id=#value#;
+	</delete>
+	
+</sqlMap>    

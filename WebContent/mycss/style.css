@@ -1,0 +1,86 @@
+.row #ChangePassword{
+ 	cursor: cell;
+ }
+body{
+	background-color:#00ffff;
+}
+#myInput{
+	background-image:url('../images/searchIcon.png');
+	background-size:30px 30px;
+	background-repeat:no-repeat;
+	width:20%;
+	font-size:16px;
+	padding: 8px 20px 8px 40px;
+	border:1px solid #ddd;
+	margin-bottom:12px;
+}
+.imglogo{
+	width:300px;
+	height:70px;
+}
+
+/*open for Data table Form*/
+#myTable tr.header,#myTable tr:hover
+ {
+	background-color:#00ff80;}
+	#dd{
+	background-color:#67c4e2;}
+	#myTable tr{
+	background-color:#00ffff;}
+	
+	}
+	#nv
+	{
+	background-color:#400040;}
+	}
+	div.dataTables_wrapper div.dataTables_filter input{
+	background-image:url('../images/searchIcon.png');
+	background-position:0px 0px;
+	background-size:20px 23px;
+	background-repeat:no-repeat;
+	padding: 0px 0px 0px 25px;
+	border:1px solid #000000;
+	margin-bottom:12px;
+}
+ div.dataTables_wrapper div.dataTables_filter input:focus{
+	background-image:url('../images/searchIcon.png');
+	background-position:0px 0px;
+	background-size:20px 23px;
+	background-repeat:no-repeat;
+	padding: 0px 0px 0px 25px;
+	border:1px solid skyblue;
+	margin-bottom:12px;
+	box-shadow:0 0 8px skyblue;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #333 !important;
+    border: 1px solid #979797;
+    background: linear-gradient(to bottom, skyblue 0%, skyblue 100%) repeat scroll 0% 0% transparent;
+}
+input:focus{
+		border:1px solid skyblue;
+	box-shadow:0 0 8px skyblue;
+}
+
+modal{background:#00ffff}
+/*end for Data table Form*/
+/* for Login Form*/
+.divStyle{
+	border-style:solid;
+	border-color: #000;
+	background-color: white;
+	border-radius:15px;
+	box-shadow:0 4px 8px black;
+	}
+	.tableLogin{width:25%;}
+	
+.bborder{
+	background-color: white;
+	margin-top:10%;
+	margin-left:30%;
+	border-radius:15px;
+	border:2px solid #000;
+	width:35%;
+	height:35%;
+	box-shadow:0 4px 8px black;
+}
